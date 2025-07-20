@@ -1,0 +1,9 @@
+This folder contains shared images used across multiple projects.
+
+Contents include:
+- Placeholder images for development and testing
+- Common icons used throughout the application
+- Fallback images for when content fails to load
+- Shared brand assets and logos
+
+These images are centralized here to avoid duplication and ensure consistency across all projects. When adding new shared images, please use descriptive filenames and consider organizing them into subdirectories if needed.

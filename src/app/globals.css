@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap');
+@import 'tailwindcss';
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #151e3d;
+  --color-foreground: #F7F7F7;
+
+  --color-card: #3C3C3C;
+  --color-card-foreground: #F7F7F7;
+
+  --color-popover: #3C3C3C;
+  --color-popover-foreground: #F7F7F7;
+
+  --color-primary: #EDE8D0;
+  --color-primary-foreground: #151e3d;
+
+  --color-secondary: #3C3C3C;
+  --color-secondary-foreground: #F7F7F7;
+
+  --color-muted: #3C3C3C;
+  --color-muted-foreground: #F7F7F7;
+
+  --color-accent: #79ecb3;
+  --color-accent-foreground: #151e3d;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #F7F7F7;
+
+  --color-border: #3C3C3C;
+  --color-input: #3C3C3C;
+  --color-ring: #EDE8D0;
+
+  --color-chart-1: #EDE8D0;
+  --color-chart-2: #79ecb3;
+  --color-chart-3: #151e3d;
+  --color-chart-4: #F7F7F7;
+  --color-chart-5: #3C3C3C;
+
+  --color-hero-background: #151e3d;
+  --color-hero-text: #F7F7F7;
+  --color-project-background: #3C3C3C;
+  --color-project-border: #3C3C3C;
+
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+
+  --radius-lg: 0.5rem;
+  --radius-md: calc(0.5rem - 2px);
+  --radius-sm: calc(0.5rem - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #3C3C3C;
+  }
+}
+
+@layer utilities {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background);
+    --foreground: var(--color-foreground);
+    --card: var(--color-card);
+    --card-foreground: var(--color-card-foreground);
+    --popover: var(--color-popover);
+    --popover-foreground: var(--color-popover-foreground);
+    --primary: var(--color-primary);
+    --primary-foreground: var(--color-primary-foreground);
+    --secondary: var(--color-secondary);
+    --secondary-foreground: var(--color-secondary-foreground);
+    --muted: var(--color-muted);
+    --muted-foreground: var(--color-muted-foreground);
+    --accent: var(--color-accent);
+    --accent-foreground: var(--color-accent-foreground);
+    --destructive: var(--color-destructive);
+    --destructive-foreground: var(--color-destructive-foreground);
+    --border: var(--color-border);
+    --input: var(--color-input);
+    --ring: var(--color-ring);
+    --chart-1: var(--color-chart-1);
+    --chart-2: var(--color-chart-2);
+    --chart-3: var(--color-chart-3);
+    --chart-4: var(--color-chart-4);
+    --chart-5: var(--color-chart-5);
+    --radius: var(--radius-lg);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-foreground);
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Custom scrollbar styles for translucent effect */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(60, 60, 60, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(60, 60, 60, 0.6);
+    border-radius: 3px;
+    backdrop-filter: blur(8px);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(60, 60, 60, 0.8);
+  }
+
+  /* Firefox scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(60, 60, 60, 0.6) rgba(60, 60, 60, 0.3);
+  }
+}
