@@ -75,7 +75,7 @@ export default function AboutSection() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a senior at Walton High School looking to puruse a career in computer science. 
-                In my free time, you might find me jamming to K-Pop, R&B, or classical music in my car, 
+                In my free time, you might find me jamming to K-Pop or R&B in my car, 
                 awkwardly trying new hobbies to expand my breadth, researching ways to improve my skincare, 
                 or flexing calisthenics on a random pull-up bar.
               </p>
@@ -163,8 +163,8 @@ export default function AboutSection() {
                   <div className="font-semibold text-foreground">Walton High School</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-muted-foreground">Hobbies</div>
-                  <div className="font-semibold text-foreground">Coding, music, tennis, volleyball, calisthenics, typing tests, sleeping, eating, breathing</div>
+                  <div className="text-muted-foreground">Music Taste</div>
+                  <div className="font-semibold text-foreground">R&B, Classical, K/J-pop, Lo-fi</div>
                 </div>
                 <div className="space-y-2">
                   <div className="text-muted-foreground">Languages</div>
