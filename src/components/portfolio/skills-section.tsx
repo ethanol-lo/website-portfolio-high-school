@@ -159,7 +159,7 @@ export default function SkillsSection() {
             Skills & Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my skills and proficiency levels across different interests
+            A comprehensive overview of my skills and proficiency levels across different interests (view more in my resume)
           </p>
         </motion.div>
 
