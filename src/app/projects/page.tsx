@@ -31,8 +31,7 @@ const projects: Project[] = [
     image: '/images/augmented_data_exoplanet.png',
     technologies: ['Python', 'Google Colab', 'ML'],
     category: 'Machine Learning',
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example/ecommerce',
+    githubUrl: 'https://github.com/ethanol-lo/exoplanet-detection-data-augmentation',
     featured: true,
     size: 'large'
   },
@@ -44,9 +43,8 @@ const projects: Project[] = [
     image: '/images/cyclone_trajectory_regression.png',
     technologies: ['Python', 'Google Colab', 'ML'],
     category: 'Machine Learning',
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example/taskmanager',
-    size: 'medium'
+    githubUrl: 'https://github.com/ethanol-lo/hurricane-predictor-time-series',
+    size: 'large'
   },
   {
     id: '3',
@@ -56,8 +54,8 @@ const projects: Project[] = [
     image: '/images/object_detection_resource_limited.png',
     technologies: ['Python', 'Raspberry Pi', 'YOLOv5'],
     category: 'Miscellaneous',
-    demoUrl: 'https://docs.google.com/presentation/d/1EtJitJznuKpm0uaRos67Nzg3VegD5v5Am9GKrqqCwho/edit?usp=sharing',
-    githubUrl: 'https://github.com/example/weather',
+    demoUrl: 'https://cobbk12org-my.sharepoint.com/personal/ethan_lo406_students_cobbk12_org/_layouts/15/Doc.aspx?sourcedoc={e7a7cf94-ed0e-4ca3-b876-c3c2cb7f5bbd}&amp;action=embedview&amp;wdAr=1.7777777777777777',
+    githubUrl: 'https://github.com/ethanol-lo/object-detection-resource-limited-device',
     size: 'wide'
   },
   {
@@ -68,8 +66,8 @@ const projects: Project[] = [
     image: '/images/garbage_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
-    githubUrl: 'https://github.com/example/apigateway',
-    size: 'small'
+    demoUrl: 'https://www.youtube.com/embed/U59MCz4a-FM?si=nn6blZ7eiUV6pkQV',
+    size: 'wide'
   },
   {
     id: '5',
@@ -79,9 +77,9 @@ const projects: Project[] = [
     image: '/images/chatbot_domain_knowledge.png',
     technologies: ['Python', 'LangChain'],
     category: 'Miscellaneous',
-    demoUrl: 'https://www.youtube.com/watch?v=B2sLZ2WX-Is',
-    githubUrl: 'https://github.com/example/banking',
-    size: 'tall'
+    demoUrl: 'https://www.youtube.com/embed/B2sLZ2WX-Is?si=3kdBCDulWDwWpfos',
+    githubUrl: 'https://github.com/ethanol-lo/domain-knowledge-chatbot',
+    size: 'medium'
   },
   {
     id: '6',
@@ -91,8 +89,19 @@ const projects: Project[] = [
     image: '/images/gyroscopic_balance_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
-    demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example/analytics',
+    size: 'medium'
+  },
+  {
+    id: '7',
+    title: 'Regression Scoring System for Off-Market/High Value Real Estate Investments',
+    description: 'Prototype model that predicts a custom investment potential score for a real estate property',
+    longDescription: 'Prototype model that predicts a custom investment potential score from 0-100 that combines rental yield, value bonus, appreciation gain, and feature bonus values' 
+      + 'for a real estate property, based on location and property-specific factors',
+    image: '/images/scoutout_model.png',
+    technologies: ['Google Colab', 'Replit', 'Python'],
+    category: 'Machine Learning',
+    demoUrl: 'https://replit.com/@charma05122/AIPropertyPredictor?v=1',
+    githubUrl: 'https://github.com/ethanol-lo/scoutout',
     size: 'medium'
   }
 ]
