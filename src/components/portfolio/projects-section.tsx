@@ -82,7 +82,7 @@ const projects: Project[] = [
     title: 'Gyroscopic Self-Balancing Robot',
     description: 'A LEGO Mindstorms EV3 robot that balances on two wheels using a gyroscopic sensor',
     longDescription: 'A LEGO Mindstorms EV3 robot that balances on two wheels using a gyroscopic sensor',
-    image: '/images/gyroscopic_balance_robot',
+    image: '/images/gyroscopic_balance_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
     demoUrl: 'https://demo.example.com',
