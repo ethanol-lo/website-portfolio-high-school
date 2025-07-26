@@ -42,7 +42,6 @@ const projects: Project[] = [
     image: '/images/cyclone_trajectory_regression.png',
     technologies: ['Python', 'Google Colab', 'ML'],
     category: 'Machine Learning',
-    demoUrl: 'https://demo.example.com',
     githubUrl: 'https://github.com/example/taskmanager'
   },
   {
@@ -64,7 +63,7 @@ const projects: Project[] = [
     image: '/images/garbage_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
-    githubUrl: 'https://github.com/example/apigateway'
+    demoUrl: '',
   },
   {
     id: '5',
@@ -86,7 +85,6 @@ const projects: Project[] = [
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
     demoUrl: 'https://demo.example.com',
-    githubUrl: 'https://github.com/example/analytics'
   }
 ]
 
