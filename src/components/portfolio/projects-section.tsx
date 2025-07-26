@@ -95,6 +95,7 @@ const projects: Project[] = [
     category: 'Machine Learning',
     demoUrl: 'https://replit.com/@charma05122/AIPropertyPredictor?v=1',
     githubUrl: 'https://github.com/ethanol-lo/scoutout'
+  }
 ]
 
 const categories = ['All', 'Machine Learning', 'Robotics', 'Miscellaneous']
