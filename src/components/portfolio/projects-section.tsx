@@ -27,7 +27,7 @@ const projects: Project[] = [
     title: 'Exoplanet Detection Using Machine Learning Models Trained on Synthetic Light Curves',
     description: 'Research on how SMOTE can significally improve ML-predicted classifications for exoplanets',
     longDescription: 'A comprehensive report about the performance of well-known ML algorithms with and without data augmentation techniques based on exoplanets from the Kepler mission',
-    image: '/images/augmented_exoplanet_data.png',
+    image: '/images/augmented_data_exoplanet.png',
     technologies: ['Python', 'Google Colab', 'ML'],
     category: 'Machine Learning',
     demoUrl: 'https://demo.example.com',
