@@ -19,13 +19,17 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Languages",
+    title: "Computer Science",
     icon: Code,
-    showPercentages: true,
+    showPercentages: false,
     skills: [
-      { name: "Python", level: 95, icon: Globe },
-      { name: "Java", level: 90, icon: SquareTerminal },
-      { name: "HTML/CSS/Javascript", level: 70, icon: CodeXml },
+      { name: "Python", icon: Globe },
+      { name: "Java", icon: SquareTerminal },
+      { name: "Object Oriented Programming (OOP)", icon: CodeXml },
+      { name: "HTML/CSS/Javascript", icon: CodeXml },
+      { name: "Research in Exoplanet Detection with ML", icon: Globe },
+      { name: "Research in Cyclone Forecasting with ML", icon: Globe },
+      { name: "Development of Real Estate Investment Potential Model Prototype", icon: SquareTerminal },
     ]
   },
   {
@@ -34,11 +38,16 @@ const skillCategories: SkillCategory[] = [
     showPercentages: false,
     skills: [
       { name: "ABRSM Diploma in Cello Performance", icon: Music2 },
+      { name: "ABRSM Cello Performance Grade 8 with Distinction", icon: Music2 },
+      { name: "ABRSM Piano Performance Grade 8 with Distinction", icon: Music },
       { name: "Walton Chamber Orchesra Cello Principal 2023-26", icon: Music },
       { name: "Atlanta Symphony Youth Orchestra Cellist 2023-26", icon: Music},
       { name: "GMEA All-State Orchestra 2019-25", icon: Music },
-      { name: "Solo Repertoire", icon: Music2 },
-      { name: "Chamber Music", icon: Music2},
+      { name: "Formed the Spitzenreiter Piano Trio", icon: Music2 },
+      { name: "Formed the Lotus Cello Quartet", icon: Music2 },
+      { name: "Outstanding Performer at the 2023 Midwest Clinic International Band and Orchestra Conference", icon: Music2 },
+      { name: "1st Place at the 2023 American Protege International Concerto Competition, performed at Carnegie Hall", icon: Music2 },
+      { name: "1st Place at the 2022 Charleston International Chamber Music Competition", icon: Music2},
     ]
   },
   {
@@ -53,7 +62,7 @@ const skillCategories: SkillCategory[] = [
       { name: "2024 Inspirit AI Scholars & Independent Research Program", icon: Globe },
       { name: "2023 Heifetz International Institute Summer Program", icon: Globe},
       { name: "2023 GenCyber Workshop for Cybersecurity at Georgia State University", icon: Wrench },
-      { name: "Self-employed & employed coding/math tutor", icon: Database },
+      { name: "Self-employed & Mathnasium coding/math tutor", icon: Database },
       { name: "Founder of Walton Public Speaking Club", icon: Globe },
       { name: "Vice President of Walton Computer Science Honor Society", icon: Database},
       { name: "External Vice President of Walton Asian Student Alliance", icon: Globe },
