@@ -71,7 +71,7 @@ const projects: Project[] = [
     title: 'Chatbot Using Domain Knowledge',
     description: 'A chatbot that provides information about a user-inputted file',
     longDescription: 'A chatbot that formulates answers and references based on user queries about a specific upload',
-    image: '/images/chatbot_domain_knowledge',
+    image: '/images/chatbot_domain_knowledge.png',
     technologies: ['Python', 'LangChain'],
     category: 'Miscellaenous',
     demoUrl: 'https://www.youtube.com/watch?v=B2sLZ2WX-Is',
