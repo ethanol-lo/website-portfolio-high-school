@@ -56,7 +56,7 @@ const projects: Project[] = [
     category: 'Miscellaneous',
     demoUrl: 'https://cobbk12org-my.sharepoint.com/personal/ethan_lo406_students_cobbk12_org/_layouts/15/Doc.aspx?sourcedoc={e7a7cf94-ed0e-4ca3-b876-c3c2cb7f5bbd}&amp;action=embedview&amp;wdAr=1.7777777777777777',
     githubUrl: 'https://github.com/ethanol-lo/object-detection-resource-limited-device',
-    size: 'wide'
+    size: 'medium'
   },
   {
     id: '4',
@@ -67,7 +67,7 @@ const projects: Project[] = [
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
     demoUrl: 'https://www.youtube.com/embed/U59MCz4a-FM?si=nn6blZ7eiUV6pkQV',
-    size: 'wide'
+    size: 'medium'
   },
   {
     id: '5',
@@ -89,7 +89,7 @@ const projects: Project[] = [
     image: '/images/gyroscopic_balance_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
-    size: 'medium'
+    size: 'large'
   },
   {
     id: '7',
