@@ -1,36 +1,50 @@
 "use client"
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 interface NavigationProps {
   onNavClick?: (section: string) => void
 }
 
+const navItems = [
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Contact', href: '#contact' }
+]
+
 const Navigation = ({ onNavClick }: NavigationProps) => {
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
+  const [activeSection, setActiveSection] = useState('about')
+  const [underlineProps, setUnderlineProps] = useState({ left: 0, width: 0 })
+  const navRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
-  ]
+  // Update underline position when the active section changes
+  useEffect(() => {
+    const idx = navItems.findIndex(item => item.href === `#${activeSection}`)
+    const el = navRefs.current[idx]
+    if (el) {
+      setUnderlineProps({
+        left: el.offsetLeft,
+        width: el.offsetWidth
+      })
+    }
+  }, [activeSection])
 
+  // Scroll and intersection observer logic
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 20
-      setScrolled(isScrolled)
+      setScrolled(window.scrollY > 20)
     }
 
     const observerOptions = {
-      threshold: 0.15,
+      threshold: 0.5,
       rootMargin: '-100px 0px -50% 0px'
     }
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new window.IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id)
@@ -46,7 +60,7 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
     })
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check initial scroll position
+    handleScroll()
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
@@ -54,20 +68,14 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
     }
   }, [])
 
-  const handleNavClick = (href: string) => {
+  // Handle nav click
+  const handleNavClick = (href: string, index: number) => {
     const sectionId = href.replace('#', '')
-    
-    if (onNavClick) {
-      onNavClick(sectionId)
-    }
-    
-    // Smooth scroll to section
+    setActiveSection(sectionId) // immediately set for click feedback
+    if (onNavClick) onNavClick(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      })
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
 
@@ -83,7 +91,7 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo/Name */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -93,68 +101,52 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
             <Link 
               href="#" 
               className="text-xl font-bold text-foreground hover:text-primary transition-colors duration-200"
-              onClick={() => handleNavClick('#hero')}
+              onClick={() => handleNavClick('#hero', -1)}
             >
               Portfolio
             </Link>
           </motion.div>
-
           {/* Navigation Items */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.div
+          <div className="relative hidden md:flex items-center space-x-8">
+            {navItems.map((item, idx) => (
+              <div
                 key={item.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 + index * 0.1 }}
+                ref={el => navRefs.current[idx] = el}
+                className="relative"
+                onClick={() => handleNavClick(item.href, idx)}
+                style={{ cursor: 'pointer' }}
               >
-                <button
-                  onClick={() => handleNavClick(item.href)}
-                  className={`relative px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-primary ${
-                    activeSection === item.href.replace('#', '')
-                      ? 'text-primary'
-                      : 'text-muted-foreground'
+                <span
+                  className={`transition-colors duration-200 px-2 py-1 text-base font-medium ${
+                    activeSection === item.href.replace('#', '') 
+                      ? 'text-primary' 
+                      : 'text-foreground hover:text-primary'
                   }`}
                 >
                   {item.name}
-                  {activeSection === item.href.replace('#', '') && (
-                    <motion.div
-                      layoutId="activeSection"
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
-                      initial={false}
-                      transition={{ duration: 0.2 }}
-                    />
-                  )}
-                </button>
-              </motion.div>
+                </span>
+              </div>
             ))}
+            {/* Underline */}
+            <motion.div
+              className="absolute bottom-0 h-[2.5px] rounded bg-primary"
+              animate={{
+                left: underlineProps.left,
+                width: underlineProps.width
+              }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 30 
+              }}
+              style={{ 
+                // fallback for SSR initial render
+                left: underlineProps.left, 
+                width: underlineProps.width, 
+                willChange: 'left, width'
+              }}
+            />
           </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors duration-200"
-            onClick={() => {
-              // Mobile menu toggle logic can be added here
-              console.log('Mobile menu toggle')
-            }}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </motion.button>
         </div>
       </div>
     </motion.nav>
