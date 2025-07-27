@@ -44,7 +44,7 @@ const projects: Project[] = [
     technologies: ['Python', 'Google Colab', 'ML'],
     category: 'Machine Learning',
     githubUrl: 'https://github.com/ethanol-lo/hurricane-predictor-time-series',
-    size: 'large'
+    size: 'medium'
   },
   {
     id: '3',
@@ -89,7 +89,7 @@ const projects: Project[] = [
     image: '/images/gyroscopic_balance_robot.jpg',
     technologies: ['LEGO Mindstorms EV3'],
     category: 'Robotics',
-    size: 'large'
+    size: 'medium'
   },
   {
     id: '7',
