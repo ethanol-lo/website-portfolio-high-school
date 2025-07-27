@@ -17,12 +17,16 @@ const navItems = [
 
 const Navigation = ({ onNavClick }: NavigationProps) => {
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('about')
+  const [activeSection, setActiveSection] = useState('') // empty string = nothing active
   const [underlineProps, setUnderlineProps] = useState({ left: 0, width: 0 })
   const navRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  // Update underline position when the active section changes
+  // Update underline position when the active section changes and is not empty
   useEffect(() => {
+    if (!activeSection) {
+      setUnderlineProps({ left: 0, width: 0 })
+      return
+    }
     const idx = navItems.findIndex(item => item.href === `#${activeSection}`)
     const el = navRefs.current[idx]
     if (el) {
@@ -33,27 +37,43 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
     }
   }, [activeSection])
 
-  // Scroll and intersection observer logic
+  // Intersection & scroll logic
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
 
+    // Observe all sections, including hero
+    const sections = ['hero', 'about', 'skills', 'projects', 'contact']
     const observerOptions = {
-      threshold: 0.4, // 40% of section is visible (tweak as needed)
+      threshold: 0.4,
       rootMargin: '-100px 0px -50% 0px'
     }
 
     const observer = new window.IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
+      let set = false
+      // Check for hero first; if visible, deactivate all
+      for (const entry of entries) {
+        if (entry.target.id === 'hero' && entry.isIntersecting) {
+          setActiveSection('')
+          set = true
+          break
         }
-      })
+      }
+      if (!set) {
+        // Find the first other section that is intersecting
+        for (const entry of entries) {
+          if (entry.isIntersecting && entry.target.id !== 'hero') {
+            setActiveSection(entry.target.id)
+            set = true
+            break
+          }
+        }
+        // If nothing is intersecting, clear active
+        if (!set) setActiveSection('')
+      }
     }, observerOptions)
 
-    // Observe sections
-    const sections = ['about', 'skills', 'projects', 'contact']
     sections.forEach((section) => {
       const element = document.getElementById(section)
       if (element) observer.observe(element)
@@ -71,7 +91,7 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
   // Handle nav click
   const handleNavClick = (href: string, index: number) => {
     const sectionId = href.replace('#', '')
-    setActiveSection(sectionId) // immediately set for click feedback
+    setActiveSection(sectionId)
     if (onNavClick) onNavClick(sectionId)
     const element = document.getElementById(sectionId)
     if (element) {
@@ -127,24 +147,26 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
                 </span>
               </div>
             ))}
-            {/* Underline */}
-            <motion.div
-              className="absolute bottom-0 h-[2.5px] rounded bg-primary"
-              animate={{
-                left: underlineProps.left,
-                width: underlineProps.width
-              }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 400, 
-                damping: 30 
-              }}
-              style={{ 
-                left: underlineProps.left, 
-                width: underlineProps.width, 
-                willChange: 'left, width'
-              }}
-            />
+            {/* Underline - only show if activeSection is NOT empty */}
+            {activeSection && (
+              <motion.div
+                className="absolute bottom-0 h-[2.5px] rounded bg-primary"
+                animate={{
+                  left: underlineProps.left,
+                  width: underlineProps.width
+                }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 30 
+                }}
+                style={{ 
+                  left: underlineProps.left, 
+                  width: underlineProps.width, 
+                  willChange: 'left, width'
+                }}
+              />
+            )}
           </div>
         </div>
       </div>
