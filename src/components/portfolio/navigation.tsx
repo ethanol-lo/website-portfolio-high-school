@@ -40,7 +40,7 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
     }
 
     const observerOptions = {
-      threshold: 0.5,
+      threshold: 0.4, // 40% of section is visible (tweak as needed)
       rootMargin: '-100px 0px -50% 0px'
     }
 
@@ -119,7 +119,7 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
                 <span
                   className={`transition-colors duration-200 px-2 py-1 text-base font-medium ${
                     activeSection === item.href.replace('#', '') 
-                      ? 'text-primary' 
+                      ? 'text-primary font-semibold' 
                       : 'text-foreground hover:text-primary'
                   }`}
                 >
@@ -140,7 +140,6 @@ const Navigation = ({ onNavClick }: NavigationProps) => {
                 damping: 30 
               }}
               style={{ 
-                // fallback for SSR initial render
                 left: underlineProps.left, 
                 width: underlineProps.width, 
                 willChange: 'left, width'
