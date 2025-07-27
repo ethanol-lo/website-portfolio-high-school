@@ -71,7 +71,7 @@ const projects: Project[] = [
     longDescription: 'A chatbot that formulates answers and references based on user queries about a specific upload',
     image: '/images/chatbot_domain_knowledge.png',
     technologies: ['Python', 'LangChain'],
-    category: 'Miscellaenous',
+    category: 'Miscellaneous',
     demoUrl: 'https://www.youtube.com/embed/B2sLZ2WX-Is?si=3kdBCDulWDwWpfos',
     githubUrl: 'https://github.com/ethanol-lo/domain-knowledge-chatbot'
   },
