@@ -83,7 +83,7 @@ export default function AboutSection() {
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-2 shadow-lg">
                 <div className="aspect-[2/3] w-full bg-secondary rounded-xl overflow-hidden border border-border">
                   <img 
-                    src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/a0c0ff94-e6ca-42f3-8007-2dff7186338a/generated_images/professional-young-person-headshot-portr-d3f765ac-20250801033138.jpg"
+                    src="/images/ethan-cello.png"
                     alt="Professional profile portrait"
                     className="w-full h-full object-cover"
                   />
