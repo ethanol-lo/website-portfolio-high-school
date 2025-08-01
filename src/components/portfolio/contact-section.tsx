@@ -41,10 +41,10 @@ export default function ContactSection() {
       };
 
       await emailjs.send(
-        'service_vo5p5zp', // Replace with your EmailJS service ID
-        'template_kd4yz5k', // Replace with your EmailJS template ID
+        'service_vgelegl', // Replace with your EmailJS service ID
+        'template_zi63jnk', // Replace with your EmailJS template ID
         emailParams,
-        'xKkZvIXVJZ8sGj6I_' // Replace with your EmailJS public key
+        '3EFf_BBKpR_w5XIyc' // Replace with your EmailJS public key
       );
 
       setSubmissionStatus('success');
