@@ -1,39 +1,63 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "motion/react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Send, Github, Instagram, Linkedin, Youtube, MessageCircle } from "lucide-react"
-import { siDiscord } from "simple-icons"
+import { useState } from "react";
+import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Send, Github, Instagram, Linkedin, Youtube, MessageCircle, User } from "lucide-react";
+import { siDiscord } from "simple-icons";
+import emailjs from 'emailjs-com';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: ""
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-    setIsSubmitting(false)
-  }
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmissionStatus('idle');
+
+    try {
+      const emailParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'elo9908@gmail.com',
+        subject: `Portfolio Contact from ${formData.name}`,
+        reply_to: formData.email
+      };
+
+      await emailjs.send(
+        'service_vo5p5zp', // Replace with your EmailJS service ID
+        'template_kd4yz5k', // Replace with your EmailJS template ID
+        emailParams,
+        'xKkZvIXVJZ8sGj6I_' // Replace with your EmailJS public key
+      );
+
+      setSubmissionStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmissionStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      setSubmissionStatus('error');
+      setTimeout(() => setSubmissionStatus('idle'), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const socialLinks = [
     { icon: Mail, href: "mailto:elo9908@gmail.com", label: "Email" },
@@ -41,8 +65,8 @@ export default function ContactSection() {
     { icon: Linkedin, href: "www.linkedin.com/in/ethan-lo-2307252ba", label: "LinkedIn" },
     { icon: Instagram, href: "https://www.instagram.com/e.than.lo/", label: "Instagram" },
     { icon: "Discord", href: "https://discordapp.com/users/701097894731841609", label: "Discord" },
-    { icon: Youtube, href: "https://www.youtube.com/channel/UCye4FoRA6XspjWJxTrBOhfA", label: "YouTube" },
-  ]
+    { icon: Youtube, href: "https://www.youtube.com/channel/UCye4FoRA6XspjWJxTrBOhfA", label: "YouTube" }
+  ];
 
   return (
     <section className="py-20 bg-background">
@@ -55,20 +79,21 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Let's Connect
+            Get in Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Connect or send me a message. I'll be happy to discuss anything with you.
+            I'm always open to discussing new opportunities, creative projects, or just having a chat about life. Feel free to reach out through any of these channels.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+          {/* Left Column - Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
+            className="lg:col-span-1"
           >
             <Card className="bg-secondary border-border">
               <CardContent className="p-8">
@@ -125,6 +150,27 @@ export default function ContactSection() {
                     />
                   </div>
 
+                  {/* Add submission status messages */}
+                  {submissionStatus === 'success' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-lg bg-green-500/20 border border-green-500/50 text-green-200 text-sm"
+                    >
+                      Message sent successfully! I'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {submissionStatus === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 rounded-lg bg-red-500/20 border border-red-500/50 text-red-200 text-sm"
+                    >
+                      Failed to send message. Please try again or email me directly.
+                    </motion.div>
+                  )}
+
                   <Button
                     type="submit"
                     disabled={isSubmitting}
@@ -148,25 +194,16 @@ export default function ContactSection() {
             </Card>
           </motion.div>
 
-          {/* Contact Info & Social Links */}
+          {/* Right Column - Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="lg:col-span-1 space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-semibold text-foreground mb-4">
-                Get in Touch
-              </h3>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                I'm always open to discussing new opportunities, creative projects, or just having a chat about life. Feel free to reach out through any of these channels.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              <h4 className="text-lg font-medium text-foreground">Connect with me</h4>
+              <h4 className="text-lg font-medium text-foreground mb-4">Connect with me</h4>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((link, index) => (
                   <motion.a
@@ -178,9 +215,9 @@ export default function ContactSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="group flex items-center gap-3 p-4 rounded-lg bg-secondary border border-border hover:border-accent transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="group flex items-center justify-start gap-3 p-4 rounded-lg bg-secondary border border-border hover:border-accent/50 transition-all duration-300 hover:bg-secondary/80"
                   >
                     <div className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/10 group-hover:bg-accent/20 transition-colors">
                       {link.icon === "Discord" ? (
@@ -195,7 +232,7 @@ export default function ContactSection() {
                         <link.icon className="h-5 w-5 text-accent" />
                       )}
                     </div>
-                    <span className="text-foreground font-medium group-hover:text-accent transition-colors">
+                    <span className="text-sm text-foreground font-medium group-hover:text-accent transition-colors">
                       {link.label}
                     </span>
                   </motion.a>
@@ -229,5 +266,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
