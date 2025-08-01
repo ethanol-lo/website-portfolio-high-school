@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "motion/react"
 import { Code, Palette, Zap, Target, Heart, Lightbulb } from "lucide-react"
+import { motion } from "motion/react"
+import { Card, CardContent } from "@/components/ui/card"
 
 export default function AboutSection() {
   const skills = [
@@ -59,23 +60,77 @@ export default function AboutSection() {
 
   return (
     <section id="about" className="py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
+          className="grid lg:grid-cols-3 gap-16 items-start"
         >
-          {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          {/* Left Column - Profile Photo - Cleaned version */}
+          <motion.div 
+            variants={itemVariants}
+            className="lg:col-span-1 space-y-8"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl p-2 shadow-lg">
+                <div className="aspect-[2/3] w-full bg-secondary rounded-xl overflow-hidden border border-border">
+                  <img 
+                    src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/project-uploads/a0c0ff94-e6ca-42f3-8007-2dff7186338a/generated_images/professional-young-person-headshot-portr-d3f765ac-20250801033138.jpg"
+                    alt="Professional profile portrait"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Quick stats underneath photo */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+            >
+              <Card className="bg-card border-border">
+                <CardContent className="p-4 space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">School</span>
+                    <span className="text-sm font-medium text-foreground">Walton High School</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Location</span>
+                    <span className="text-sm font-medium text-foreground">Marietta, Georgia</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Graduation</span>
+                    <span className="text-sm font-medium text-foreground">2026</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Music Taste</span>
+                    <span className="text-sm font-medium text-foreground">R&B, Classical, K/J-pop, Lo-fi</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+
+          {/* Middle & Right Columns - Text Content */}
+          <div className="lg:col-span-2 space-y-8">
             <motion.div variants={itemVariants} className="space-y-6">
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
                 About Me
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a senior at Walton High School looking to puruse a career in computer science. 
-                In my free time, you might find me jamming to K-Pop or R&B in my car, 
+                In my free time, you might find me jamming to K-Pop, R&B, or classical music in my car, 
                 awkwardly trying new hobbies to expand my breadth, researching ways to improve my skincare, 
                 or flexing calisthenics on a random pull-up bar.
               </p>
@@ -118,13 +173,11 @@ export default function AboutSection() {
                 advanced future.
               </p>
             </motion.div>
-          </div>
 
-          {/* Right Column - Skills & Visual Elements */}
-          <div className="space-y-8">
+            {/* Skills section */}
             <motion.div
               variants={itemVariants}
-              className="bg-card rounded-lg p-8 border border-border"
+              className="mt-12 bg-card rounded-lg p-8 border border-border"
             >
               <h3 className="text-2xl font-bold text-foreground mb-6">Core Expertise</h3>
               <div className="space-y-6">
@@ -152,30 +205,6 @@ export default function AboutSection() {
               </div>
             </motion.div>
 
-            <motion.div
-              variants={itemVariants}
-              className="bg-card rounded-lg p-8 border border-border"
-            >
-              <h3 className="text-xl font-bold text-foreground mb-4">Quick Facts</h3>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="space-y-2">
-                  <div className="text-muted-foreground">School</div>
-                  <div className="font-semibold text-foreground">Walton High School</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-muted-foreground">Music Taste</div>
-                  <div className="font-semibold text-foreground">R&B, Classical, K/J-pop, Lo-fi</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-muted-foreground">Languages</div>
-                  <div className="font-semibold text-foreground">Python, Java, HTML/CSS/JS</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-muted-foreground">Location</div>
-                  <div className="font-semibold text-foreground">Marietta, GA</div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </div>
