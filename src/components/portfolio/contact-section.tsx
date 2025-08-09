@@ -79,7 +79,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Get in Touch
+            Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, creative projects, or just having a chat about life. Feel free to reach out through any of these channels.
