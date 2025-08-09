@@ -82,7 +82,7 @@ export default function HeroSection() {
   ]
 
   const scrollToProjects = () => {
-    const projectSection = document.getElementById('project')
+    const projectSection = document.getElementById('projects')
     if (projectSection) {
       projectSection.scrollIntoView({ behavior: 'smooth' })
     }
