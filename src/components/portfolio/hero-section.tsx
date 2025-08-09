@@ -88,6 +88,13 @@ export default function HeroSection() {
     }
   }
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about')
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <section className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
       {/* Scroll Particles */}
