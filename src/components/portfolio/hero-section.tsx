@@ -81,10 +81,10 @@ export default function HeroSection() {
     "Calisthenics Enthusiast"
   ]
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about')
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' })
+  const scrollToProjects = () => {
+    const projectSection = document.getElementById('project')
+    if (projectSection) {
+      projectSection.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -251,7 +251,7 @@ export default function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
             <Button
-              onClick={scrollToAbout}
+              onClick={scrollToProjects}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
