@@ -264,14 +264,13 @@ export default function HeroSection() {
             >
               View My Work
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
+            <a
+              href="/public/Ethan-Lo-CV.pdf"
+              download
             >
               <Download className="mr-2 h-4 w-4" />
               Download Resume
-            </Button>
+            </a>
           </motion.div>
 
           {/* Social Links */}
