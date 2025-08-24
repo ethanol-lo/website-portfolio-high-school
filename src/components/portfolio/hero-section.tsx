@@ -264,7 +264,7 @@ export default function HeroSection() {
             >
               View My Work
             </Button>
-            <a href="/public/Ethan-Lo-CV.pdf" download>
+            <a href="/public/CV.pdf" download>
               <Button
                 variant="outline"
                 size="lg"
