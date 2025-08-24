@@ -270,7 +270,6 @@ export default function HeroSection() {
                 size="lg"
                 className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
-                <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </Button>
             </a>
