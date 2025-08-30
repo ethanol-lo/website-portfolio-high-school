@@ -27,9 +27,18 @@ const skillCategories: SkillCategory[] = [
       { name: "Java", icon: SquareTerminal },
       { name: "Object Oriented Programming (OOP)", icon: CodeXml },
       { name: "HTML/CSS/Javascript", icon: CodeXml },
+      { name: "DE Intro to OOP at Georgia Institute of Technology", icon: Wrench },
+      { name: "2025 Harvard Undergraduate Ventures-TECH Summer Program (HUVTSP)", icon: Database },
+      { name: "2025 Internship at ScoutOut", icon: Wrench},
+      { name: "2025-26 Vice President of Walton Computer Science Honor Society", icon: Globe },
+      { name: "Published two papers to arXiv", icon: Database },
+      { name: "2024 Inspirit AI Scholars & Independent Research Program", icon: Globe },
       { name: "Research in Exoplanet Detection with ML", icon: Globe },
       { name: "Research in Cyclone Forecasting with ML", icon: Globe },
-      { name: "Development of Real Estate Investment Potential Model Prototype", icon: SquareTerminal },
+      { name: "5 in AP Computer Science A", icon: SquareTerminal },
+      { name: "Contribution to Divergent Teams Hackathon with NLP model (1st Place)", icon: CodeXml },
+      { name: "Mathnasium & freelance math/coding tutor", icon: Database },
+      { name: "2023 GenCyber Workshop for Cybersecurity at Georgia State University", icon: Wrench },
     ]
   },
   {
@@ -43,29 +52,30 @@ const skillCategories: SkillCategory[] = [
       { name: "Walton Chamber Orchesra Cello Principal 2023-26", icon: Music },
       { name: "Atlanta Symphony Youth Orchestra Cellist 2023-26", icon: Music},
       { name: "GMEA All-State Orchestra 2019-25", icon: Music },
-      { name: "Formed the Spitzenreiter Piano Trio", icon: Music2 },
-      { name: "Formed the Lotus Cello Quartet", icon: Music2 },
+      { name: "Founded the Spitzenreiter Piano Trio", icon: Music2 },
+      { name: "Founded the Lotus Cello Quartet", icon: Music2 },
+      { name: "2025-26 Tri-M Music Honor Society", icon: Music },
       { name: "Outstanding Performer at the 2023 Midwest Clinic International Band and Orchestra Conference", icon: Music2 },
       { name: "1st Place at the 2023 American Protege International Concerto Competition, performed at Carnegie Hall", icon: Music2 },
-      { name: "1st Place at the 2022 Charleston International Chamber Music Competition", icon: Music2},
+      { name: "1st Place at the 2022 Charleston International Chamber Music Competition", icon: Music2 },
     ]
   },
   {
-    title: "Experiences",
+    title: "Other Experiences",
     icon: Wrench,
     showPercentages: false,
     skills: [
-      { name: "2025 Harvard Undergraduate Ventures-TECH Summer Program (HUVTSP)", icon: Database },
-      { name: "2025 Internship at ScoutOut", icon: Wrench},
       { name: "2025 National Junior Classical League Convention with Full Scholarship", icon: Globe },
+      { name: "Summa Cum Laude in the National Latin Exam (2022-25)", icon: Globe },
+      { name: "Walton JCL Webmaster (1st in GJCL Website Contest)", icon: Database },
       { name: "2024 Governor's Honors Program (Cello Major, CS Minor)", icon: Music2 },
-      { name: "2024 Inspirit AI Scholars & Independent Research Program", icon: Globe },
-      { name: "2023 Heifetz International Institute Summer Program", icon: Globe},
-      { name: "2023 GenCyber Workshop for Cybersecurity at Georgia State University", icon: Wrench },
-      { name: "Self-employed & Mathnasium coding/math tutor", icon: Database },
-      { name: "Founder of Walton Public Speaking Club", icon: Globe },
-      { name: "Vice President of Walton Computer Science Honor Society", icon: Database},
-      { name: "External Vice President of Walton Asian Student Alliance", icon: Globe },
+      { name: "2023 Heifetz International Music Institute Summer Program", icon: Globe},
+      { name: "2025-26 Founder/President of Walton Public Speaking Club", icon: Globe },
+      { name: "2024-26 Vice President of Walton Asian Student Alliance", icon: Globe },
+      { name: "2022-26 Math Varsity Team, Communications Coordinator & JV Coach", icon: Wrench },
+      { name: "2024-25 Vice President of Academic Bowl (2022-25 member)", icon: Globe },
+      { name: "2023-26 Tennis Varsity Team, 2025 State Finalists", icon: Globe },
+      { name: "2025-26 Mu Alpha Theta Honor Society", icon: Database },
     ]
   }
 ]
@@ -181,12 +191,8 @@ export default function SkillsSection() {
         >
           <div className="bg-card border border-border rounded-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold mb-4 text-foreground">
-              Always Learning
+              SAT 1560
             </h3>
-            <p className="text-muted-foreground">
-              I'm constantly expanding my skillset and staying up-to-date with the latest technologies. 
-              Currently exploring applications of machine learning algorithms.
-            </p>
           </div>
         </motion.div>
       </div>
