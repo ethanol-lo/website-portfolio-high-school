@@ -191,7 +191,7 @@ export default function SkillsSection() {
         >
           <div className="bg-card border border-border rounded-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold mb-4 text-foreground">
-              SAT 1560
+              SAT 1560 • 17 APs • GPA 4.65
             </h3>
           </div>
         </motion.div>
