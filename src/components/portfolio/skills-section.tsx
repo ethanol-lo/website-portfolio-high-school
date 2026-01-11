@@ -27,18 +27,11 @@ const skillCategories: SkillCategory[] = [
       { name: "Java", icon: SquareTerminal },
       { name: "Object Oriented Programming (OOP)", icon: CodeXml },
       { name: "HTML/CSS/Javascript", icon: CodeXml },
-      { name: "DE Intro to OOP at Georgia Institute of Technology", icon: Wrench },
-      { name: "2025 Harvard Undergraduate Ventures-TECH Summer Program (HUVTSP)", icon: Database },
-      { name: "2025 Internship at ScoutOut", icon: Wrench},
-      { name: "2025-26 Vice President of Walton Computer Science Honor Society", icon: Globe },
-      { name: "Published two papers to arXiv", icon: Database },
-      { name: "2024 Inspirit AI Scholars & Independent Research Program", icon: Globe },
-      { name: "Research in Exoplanet Detection with ML", icon: Globe },
-      { name: "Research in Cyclone Forecasting with ML", icon: Globe },
-      { name: "5 in AP Computer Science A", icon: SquareTerminal },
-      { name: "Contribution to Divergent Teams Hackathon with NLP model (1st Place)", icon: CodeXml },
-      { name: "Mathnasium & freelance math/coding tutor", icon: Database },
-      { name: "2023 GenCyber Workshop for Cybersecurity at Georgia State University", icon: Wrench },
+      { name: "Research in Machine Learning", icon: Database },
+      { name: "Deep Learning", icon: SquareTerminal },
+      { name: "Natural Language Processing", icon: CodeXml },
+      { name: "Tutoring in Math and Coding", icon: Database },
+      { name: "Cybersecurity", icon: Wrench },
     ]
   },
   {
@@ -46,18 +39,10 @@ const skillCategories: SkillCategory[] = [
     icon: Music,
     showPercentages: false,
     skills: [
-      { name: "ABRSM Diploma in Cello Performance", icon: Music2 },
-      { name: "ABRSM Cello Performance Grade 8 with Distinction", icon: Music2 },
-      { name: "ABRSM Piano Performance Grade 8 with Distinction", icon: Music },
-      { name: "Walton Chamber Orchesra Cello Principal 2023-26", icon: Music },
-      { name: "Atlanta Symphony Youth Orchestra Cellist 2023-26", icon: Music},
-      { name: "GMEA All-State Orchestra 2019-25", icon: Music },
-      { name: "Founded the Spitzenreiter Piano Trio", icon: Music2 },
-      { name: "Founded the Lotus Cello Quartet", icon: Music2 },
-      { name: "2025-26 Tri-M Music Honor Society", icon: Music },
-      { name: "Outstanding Performer at the 2023 Midwest Clinic International Band and Orchestra Conference", icon: Music2 },
-      { name: "1st Place at the 2023 American Protege International Concerto Competition, performed at Carnegie Hall", icon: Music2 },
-      { name: "1st Place at the 2022 Charleston International Chamber Music Competition", icon: Music2 },
+      { name: "Cello soloist, chamber musician, and orchestra player", icon: Music2 },
+      { name: "ABRSM Music Theory and Performance", icon: Music2 },
+      { name: "Musician for the Community", icon: Music },
+      { name: "Several Awards in State, National, and International Competitons", icon: Music2 },
     ]
   },
   {
@@ -65,17 +50,14 @@ const skillCategories: SkillCategory[] = [
     icon: Wrench,
     showPercentages: false,
     skills: [
-      { name: "2025 National Junior Classical League Convention with Full Scholarship", icon: Globe },
-      { name: "Summa Cum Laude in the National Latin Exam (2022-25)", icon: Globe },
-      { name: "Walton JCL Webmaster (1st in GJCL Website Contest)", icon: Database },
-      { name: "2024 Governor's Honors Program (Cello Major, CS Minor)", icon: Music2 },
-      { name: "2023 Heifetz International Music Institute Summer Program", icon: Globe},
-      { name: "2025-26 Founder/President of Walton Public Speaking Club", icon: Globe },
-      { name: "2024-26 Vice President of Walton Asian Student Alliance", icon: Globe },
-      { name: "2022-26 Math Varsity Team, Communications Coordinator & JV Coach", icon: Wrench },
-      { name: "2024-25 Vice President of Academic Bowl (2022-25 member)", icon: Globe },
-      { name: "2023-26 Tennis Varsity Team, 2025 State Finalists", icon: Globe },
-      { name: "2025-26 Mu Alpha Theta Honor Society", icon: Database },
+      { name: "Latin Scholar", icon: Globe },
+      { name: "Walton Public Speaking Club", icon: Globe },
+      { name: "Walton Math Varsity Team", icon: Database },
+      { name: "Walton Asian Student Alliance", icon: Globe },
+      { name: "Walton Academic Bowl", icon: Wrench },
+      { name: "Walton Tennis Varisty Team, 2025 State Finalists", icon: Globe },
+      { name: "Mu Alpha Theta Honor Society", icon: Globe },
+      { name: "Tri-M Honor Society", icon: Database },
     ]
   }
 ]
@@ -169,7 +151,7 @@ export default function SkillsSection() {
             Skills & Experience
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my skills and proficiency levels across different interests (view more in my resume)
+            A brief overview of my skills and experiences across different interests
           </p>
         </motion.div>
 
@@ -191,7 +173,7 @@ export default function SkillsSection() {
         >
           <div className="bg-card border border-border rounded-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-xl font-semibold mb-4 text-foreground">
-              SAT 1560 • 17 APs • GPA 4.65
+              SAT 1560 • 17 APs • GPA 4.7
             </h3>
           </div>
         </motion.div>
