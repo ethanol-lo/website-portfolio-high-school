@@ -14,7 +14,7 @@ export default function AboutSection() {
     {
       icon: Palette,
       title: "Math & Coding",
-      description: "Dual enrolled in Distance Math Year 2 at the Georgia Tech. Self-taught Python with 10+ years experience. Tutored students up to the high school level."
+      description: "Dual enrolled in Distance Math Year 2 at the Georgia Tech and took CS 1331. Self-taught Python with 10+ years experience. Tutored students up to the high school level."
     },
     {
       icon: Zap,
@@ -115,7 +115,7 @@ export default function AboutSection() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Music Taste</span>
-                    <span className="text-sm font-medium text-foreground">R&B, Classical, K/J-pop, Lo-fi</span>
+                    <span className="text-sm font-medium text-foreground">Indie Pop, Classical, K/J-pop, Lo-fi</span>
                   </div>
                 </CardContent>
               </Card>
@@ -130,9 +130,8 @@ export default function AboutSection() {
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I'm a senior at Walton High School looking to puruse a career in computer science. 
-                In my free time, you might find me jamming to K-Pop, R&B, or classical music in my car, 
-                awkwardly trying new hobbies to expand my breadth, researching ways to improve my skincare, 
-                or flexing calisthenics on a random pull-up bar.
+                I am always open to learning new things and taking on challenges that push me to grow both 
+                personally and professionally.
               </p>
             </motion.div>
 
@@ -141,11 +140,10 @@ export default function AboutSection() {
                 <Target className="w-5 h-5 text-primary" />
                 <h3 className="text-xl font-semibold text-foreground">My Journey</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
-                I've always been told what to do and how to do it and have only recently discovered realized independence. 
-                Technology has fascinated me from a young age, and now there are limitless applications of AI that I crave 
-                to learn and apply. In addition, I've pursued other passions along the way, such as the cello, calisthenics, 
-                and tennis. 
+              <p className="text-muted-foreground leading-relaxed"> 
+                Technology has fascinated me from a young age, and now there are limitless applications of AI that I'm eager
+                to learn and apply. Started with Python, I learned through building small projects to taking on complex challenges.
+                With the skills I've acquired so far, I aim to create impactful solutions that make a difference.
               </p>
             </motion.div>
 
