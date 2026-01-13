@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react"
 import { useRef } from "react"
-import { Code, Palette, Wrench, Database, Globe, Smartphone, Music, AudioLines, Music2, CodeXml, SquareTerminal } from "lucide-react"
+import { Code, Palette, Wrench, Database, Globe, Smartphone, Music, AudioLines, Music2, CodeXml, SquareTerminal, } from "lucide-react"
 
 interface Skill {
   name: string
@@ -41,8 +41,13 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Cello soloist, chamber musician, and orchestra player", icon: Music2 },
       { name: "ABRSM Music Theory and Performance", icon: Music2 },
-      { name: "Musician for the Community", icon: Music },
+      { name: "Community Performances", icon: Music },
       { name: "Several Awards in State, National, and International Competitons", icon: Music2 },
+      { name: "GMAC Cello Instructor, Private Lessons for Beginners", icon: AudioLines },
+      { name: "Ensemble Founder of the Lotus Cello Quartet and Spitzenreiter Piano Trio", icon: Music2 },
+      { name: "Member of the Atlanta Symphony Youth Orchestra (ASYO)", icon: Music },
+      { name: "Georgia All-State Orchestra", icon: Music2 },
+      { name: "Premiered Pieces for Eric Whitacre", icon: Music}
     ]
   },
   {
@@ -51,11 +56,12 @@ const skillCategories: SkillCategory[] = [
     showPercentages: false,
     skills: [
       { name: "Latin Scholar", icon: Globe },
-      { name: "Walton Public Speaking Club", icon: Globe },
-      { name: "Walton Math Varsity Team", icon: Database },
-      { name: "Walton Asian Student Alliance", icon: Globe },
-      { name: "Walton Academic Bowl", icon: Wrench },
-      { name: "Walton Tennis Varisty Team, 2025 State Finalists", icon: Globe },
+      { name: "Public Speaking Club", icon: Globe },
+      { name: "Math Varsity Team", icon: Database },
+      { name: "Asian Student Alliance", icon: Globe },
+      { name: "Academic Bowl", icon: Wrench },
+      { name: "Tennis Varisty Team, 2025 State Finalists", icon: Globe },
+      { name: "Volleball Varsity & Tsunami Volleyball Club Player", icon: Globe },
       { name: "Mu Alpha Theta Honor Society", icon: Globe },
       { name: "Tri-M Honor Society", icon: Database },
     ]

@@ -78,7 +78,7 @@ export default function HeroSection() {
     "Coder", 
     "Musician",
     "Athlete",
-    "Calisthenics Enthusiast"
+    "Sleep Enthusiast",
   ]
 
   const scrollToProjects = () => {
