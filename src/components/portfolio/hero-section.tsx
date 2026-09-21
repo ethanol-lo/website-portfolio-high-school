@@ -74,11 +74,11 @@ const CyclingTypewriter = ({ words, delay = 0 }: { words: string[]; delay?: numb
 
 export default function HeroSection() {
   const typewriterWords = [
-    "High School Student",
-    "Coder", 
+    "Yellow Jacket",
+    "Innovator", 
     "Musician",
+    "Adventurer",
     "Athlete",
-    "Sleep Enthusiast",
   ]
 
   const scrollToProjects = () => {
