@@ -25,13 +25,9 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Python", icon: Globe },
       { name: "Java", icon: SquareTerminal },
-      { name: "Object Oriented Programming (OOP)", icon: CodeXml },
       { name: "HTML/CSS/Javascript", icon: CodeXml },
-      { name: "Research in Machine Learning", icon: Database },
-      { name: "Deep Learning", icon: SquareTerminal },
+      { name: "Machine & Deep Learning", icon: Database },
       { name: "Natural Language Processing", icon: CodeXml },
-      { name: "Tutoring in Math and Coding", icon: Database },
-      { name: "Cybersecurity", icon: Wrench },
     ]
   },
   {
@@ -44,26 +40,19 @@ const skillCategories: SkillCategory[] = [
       { name: "Community Performances", icon: Music },
       { name: "Several Awards in State, National, and International Competitons", icon: Music2 },
       { name: "GMAC Cello Instructor, Private Lessons for Beginners", icon: AudioLines },
-      { name: "Ensemble Founder of the Lotus Cello Quartet and Spitzenreiter Piano Trio", icon: Music2 },
-      { name: "Member of the Atlanta Symphony Youth Orchestra (ASYO)", icon: Music },
-      { name: "Georgia All-State Orchestra", icon: Music2 },
-      { name: "Premiered Pieces for Eric Whitacre", icon: Music}
+      { name: "Member of the Georgia Tech Symphony Orchestra", icon: Music },
     ]
   },
   {
-    title: "Other Experiences",
+    title: "Other Interests",
     icon: Wrench,
     showPercentages: false,
     skills: [
-      { name: "Latin Scholar", icon: Globe },
-      { name: "Public Speaking Club", icon: Globe },
-      { name: "Math Varsity Team", icon: Database },
-      { name: "Asian Student Alliance", icon: Globe },
-      { name: "Academic Bowl", icon: Wrench },
-      { name: "Tennis Varisty Team, 2025 State Finalists", icon: Globe },
-      { name: "Volleball Varsity & Tsunami Volleyball Club Player", icon: Globe },
-      { name: "Mu Alpha Theta Honor Society", icon: Globe },
-      { name: "Tri-M Honor Society", icon: Database },
+      { name: "Math Tutoring", icon: Globe },
+      { name: "Startup Entrepreneurship", icon: Database },
+      { name: "Volleyball, Tennis, Pickleball", icon: Globe },
+      { name: "Calisthenics", icon: Wrench },
+      { name: "Vietnamese Student Association", icon: Globe },
     ]
   }
 ]
@@ -170,19 +159,6 @@ export default function SkillsSection() {
             />
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-card border border-border rounded-lg p-8 max-w-3xl mx-auto">
-            <h3 className="text-xl font-semibold mb-4 text-foreground">
-              SAT 1560 • 17 APs • GPA 4.7
-            </h3>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
