@@ -9,17 +9,18 @@ export default function AboutSection() {
     {
       icon: Code,
       title: "Machine Learning & AI",
-      description: "Conducted extensive research in the field of machine learning, familiar with creating regression and classification models."
+      description: "Conducted extensive machine learning research and projects, familiar with creating regression and classification models, such as
+        XGBoost, GradientBoost, Logistic Regression, KNN, RF, MLP, SVM, CNN, RNN, LSTM, BERT"
     },
     {
       icon: Palette,
-      title: "Math & Coding",
-      description: "Dual enrolled in Distance Math Year 2 at the Georgia Tech and took CS 1331. Self-taught Python with 10+ years experience. Tutored students up to the high school level."
+      title: "Languages & Frameworks",
+      description: "Fluent in Python, Java, JUnit, HTML/CSS, and JavaScript. Currently taking Data Structures & Algorithms (1332). and Computer Organization & Programming (2110)."
     },
     {
       icon: Zap,
-      title: "Cello Performance",
-      description: "Competed and won competitions at the state, national, and international level. Performed around the nation with a decade of study."
+      title: "Databases & Tools",
+      description: "Experienced in VS Code, IntelliJ, Git, Jupyter Notebook, Google Colab, and Raspberry Pi."
     }
   ]
 
@@ -103,19 +104,19 @@ export default function AboutSection() {
                 <CardContent className="p-4 space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">School</span>
-                    <span className="text-sm font-medium text-foreground">Walton High School</span>
+                    <span className="text-sm font-medium text-foreground">Georgia Institute of Technology</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Location</span>
-                    <span className="text-sm font-medium text-foreground">Marietta, Georgia</span>
+                    <span className="text-sm font-medium text-foreground">Atlanta, Georgia</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Graduation</span>
-                    <span className="text-sm font-medium text-foreground">2026</span>
+                    <span className="text-sm font-medium text-foreground">2028</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Music Taste</span>
-                    <span className="text-sm font-medium text-foreground">Indie Pop, Classical, K/J-pop, Lo-fi</span>
+                    <span className="text-sm font-medium text-foreground">Indie Pop, Classical, K/J-pop, R&B</span>
                   </div>
                 </CardContent>
               </Card>
@@ -129,7 +130,7 @@ export default function AboutSection() {
                 About Me
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a senior at Walton High School looking to puruse a career in computer science. 
+                I'm a junior at the Georgia Institute of Technology with a major in computer science and threads in AI and Modeling & Simulation. 
                 I am always open to learning new things and taking on challenges that push me to grow both 
                 personally and professionally.
               </p>
