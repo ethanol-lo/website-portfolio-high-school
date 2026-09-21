@@ -259,7 +259,7 @@ export default function ContactSection() {
             <div className="p-6 rounded-lg bg-secondary border border-border">
               <h4 className="text-lg font-medium text-foreground mb-2">Response Time</h4>
               <p className="text-muted-foreground">
-                With a few hours, usually
+                Within 24 hours
               </p>
             </div>
           </motion.div>
