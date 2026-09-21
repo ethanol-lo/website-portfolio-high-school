@@ -9,8 +9,7 @@ export default function AboutSection() {
     {
       icon: Code,
       title: "Machine Learning & AI",
-      description: "Conducted extensive machine learning research and projects, familiar with creating regression and classification models, such as
-        XGBoost, GradientBoost, Logistic Regression, KNN, RF, MLP, SVM, CNN, RNN, LSTM, BERT"
+      description: "Conducted extensive machine learning research and projects, familiar with creating regression and classification models, such as XGBoost, GradientBoost, Logistic Regression, KNN, RF, MLP, SVM, CNN, RNN, LSTM, BERT"
     },
     {
       icon: Palette,
